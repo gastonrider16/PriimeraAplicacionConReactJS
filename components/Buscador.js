@@ -5,12 +5,13 @@ class Buscador extends Component {
     obtenerDatos = (e) => { //Metodo
         e.preventDefault();
         alert(this.busquedaRef.current.value);
+        this.props.datosBusqueda(this.busquedaRef.current.value);
     }
     render(){
         return(
             <form onSubmit={this.obtenerDatos}> {/*Invocacion submit */}
                 <div className="row">
-                    {this.props.mensaje}
+                    {/*{this.props.mensaje} PARA QUE NO DE ERROR*/}
                     <div className="form-group col-md-7"> {/*De boostrap. Para que tome de las 8 columnas que vienen por default*/}
                         <input ref={this.busquedaRef} type="text" className="form-control
                         form-control-lg" placeholder="Busca tu imagen.
