@@ -3,7 +3,12 @@ import Buscador from './components/Buscador';
 
 class App extends react.Component {
   datosBusqueda = (termino) => {
-    console.log(termino);
+    this.setState({
+      termino
+    })
+  }
+  state = { //state es un objeto
+    termino : 'HOLA MUNDO'
   }
 
   render(){
@@ -17,6 +22,7 @@ class App extends react.Component {
             datosBusqueda={this.datosBusqueda}
           />
         </div>
+        {this.state.termino}
       </div>
     );
   }
